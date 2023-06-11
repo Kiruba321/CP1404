@@ -5,7 +5,7 @@ def main():
         print("(P)rint result")
         print("(Q)uit")
 
-        choice = input(">>> ").upper()
+        choice = input("Enter: ").upper()
 
         if choice == "I":
             score = get_score()
