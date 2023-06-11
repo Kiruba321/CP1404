@@ -1,4 +1,3 @@
-
 def validate_number_of_items():
     while True:
         try:
@@ -10,18 +9,20 @@ def validate_number_of_items():
         except ValueError:
             print("Invalid input! Please enter a valid number.")
 
+
 def calculate_total_price(number_of_items):
     total_cost = 0
     for i in range(number_of_items):
         while True:
             try:
-                price_of_item = float(input(f"Price of item {i+1}: $"))
+                price_of_item = float(input(f"Price of item {i + 1}: $"))
                 total_cost += price_of_item
                 break
             except ValueError:
                 print("Invalid input! Please enter a valid price.")
 
     return total_cost
+
 
 number_of_items = validate_number_of_items()
 total_price = calculate_total_price(number_of_items)
