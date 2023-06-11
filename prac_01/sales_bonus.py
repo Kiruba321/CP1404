@@ -1,4 +1,3 @@
-
 score = float(input("Enter score: "))
 if score < 0:
     print("Invalid score")
