@@ -1,6 +1,12 @@
-"""
-Program to calculate and display a user's bonus based on sales.  
-If sales are under $1,000, the user gets a 10% bonus.  
-If sales are $1,000 or over, the bonus is 15%.  
-"""
-sales = float(input("Enter sales: $"))
+score = float(input("Enter score: "))
+if score < 0:
+    print("Invalid score")
+else:
+    if score > 100:
+        print("Invalid score")
+    elif score > 90:
+        print("Excellent")
+    elif score > 50:
+        print("Passable")
+    else:
+        print("Bad")
