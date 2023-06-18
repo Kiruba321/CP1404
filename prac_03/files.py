@@ -20,7 +20,7 @@ second_line = int(open_file.readline())
 result = first_line + second_line
 print("Sum of line 1 & 2 is ",result)
 
-
+a
 # Q4
 open_file = open("numbers.TXT", "r")
 total = 0
