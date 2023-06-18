@@ -1,3 +1,8 @@
+"""
+CP1404/CP5632 - Practical
+Various examples of using Python string formatting with the str.format() method
+Want to read more about it? https://docs.python.org/3/library/string.html#formatstrings
+"""
 
 name = "Gibson L-5 CES"
 year = 1922
@@ -13,6 +18,7 @@ print("My {0} was first made in {1} (that's right, {1}!)".format(name, year))
 
 # Formatting currency (grouping with comma, 2 decimal places):
 print("My {} would cost ${:,.2f}".format(name, cost))
+print(f"My {name} would cost ${cost:,.2f}")
 
 # Aligning columns:
 numbers = [1, 19, 123, 456, -25]

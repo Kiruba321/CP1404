@@ -4,7 +4,7 @@ Password checker "skeleton" code to help you get started
 """
 
 MIN_LENGTH = 5
-MAX_LENGTH = 10
+MAX_LENGTH = 15
 SPECIAL_CHARS_REQUIRED = False
 SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
 
