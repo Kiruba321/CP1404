@@ -73,19 +73,25 @@ def update_project(projects):
         print("Invalid project choice.")
 
 
+def display_menu():
+    """Display the main menu options."""
+    print("\nMain Menu:")
+    print("(L)oad projects")
+    print("(S)ave projects")
+    print("(D)isplay projects")
+    print("(F)ilter projects by date")
+    print("(A)dd new project")
+    print("(U)pdate project")
+    print("(Q)uit")
+
+
 def main():
     """Main program to manage projects."""
     projects = []
+    is_running = True
 
-    while True:
-        print("\nMain Menu:")
-        print("(L)oad projects")
-        print("(S)ave projects")
-        print("(D)isplay projects")
-        print("(F)ilter projects by date")
-        print("(A)dd new project")
-        print("(U)pdate project")
-        print("(Q)uit")
+    while is_running:
+        display_menu()
 
         choice = input(">>> ").upper()
 
@@ -107,9 +113,10 @@ def main():
             update_project(projects)
         elif choice == "Q":
             print("Thank you for using custom-built project management software.")
-            break
+            is_running = False
         else:
             print("Invalid choice. Please try again.")
+
 
 if __name__ == "__main__":
     main()
