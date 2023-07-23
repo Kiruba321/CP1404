@@ -41,3 +41,32 @@ def filter_projects_by_date(projects):
     filtered_projects = [project for project in projects if project.start_date > date]
     for project in sorted(filtered_projects, key=lambda p: p.start_date):
         print(f"  {project}")
+
+
+def add_new_project(projects):
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
+    priority = int(input("Priority: "))
+    estimate = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+
+    project = Project(name, start_date, priority, estimate, completion)
+    projects.append(project)
+
+def update_project(projects):
+    print("Current projects:")
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    choice = int(input("Project choice: "))
+    if 0 <= choice < len(projects):
+        project = projects[choice]
+        new_completion = input("New Percentage: ")
+        if new_completion:
+            project.completion = int(new_completion)
+        new_priority = input("New Priority: ")
+        if new_priority:
+            project.priority = int(new_priority)
+    else:
+        print("Invalid project choice.")
