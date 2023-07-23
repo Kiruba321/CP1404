@@ -54,6 +54,7 @@ def add_new_project(projects):
     project = Project(name, start_date, priority, estimate, completion)
     projects.append(project)
 
+
 def update_project(projects):
     print("Current projects:")
     for i, project in enumerate(projects):
@@ -70,3 +71,45 @@ def update_project(projects):
             project.priority = int(new_priority)
     else:
         print("Invalid project choice.")
+
+
+def main():
+    """Main program to manage projects."""
+    projects = []
+
+    while True:
+        print("\nMain Menu:")
+        print("(L)oad projects")
+        print("(S)ave projects")
+        print("(D)isplay projects")
+        print("(F)ilter projects by date")
+        print("(A)dd new project")
+        print("(U)pdate project")
+        print("(Q)uit")
+
+        choice = input(">>> ").upper()
+
+        if choice == "L":
+            filename = input("Enter the filename to load projects from: ")
+            projects = load_projects_from_file(filename)
+            print("Projects loaded successfully.")
+        elif choice == "S":
+            filename = input("Enter the filename to save projects to: ")
+            save_projects_to_file(filename, projects)
+            print("Projects saved successfully.")
+        elif choice == "D":
+            display_projects(projects)
+        elif choice == "F":
+            filter_projects_by_date(projects)
+        elif choice == "A":
+            add_new_project(projects)
+        elif choice == "U":
+            update_project(projects)
+        elif choice == "Q":
+            print("Thank you for using custom-built project management software.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
