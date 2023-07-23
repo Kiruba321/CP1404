@@ -23,6 +23,12 @@ def read_guitars_from_file(filename):
     return guitars
 
 
+def write_guitars_to_file(filename, guitars):
+    with open(filename, 'w') as file:
+        for guitar in guitars:
+            file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
+
+
 def main():
     filename = 'guitars.csv'
     guitars = read_guitars_from_file(filename)
@@ -31,11 +37,21 @@ def main():
     for guitar in guitars:
         print(guitar)
 
+    user_input = input("Enter guitar name or 'exit' to finish: ")
+    while user_input.lower() != 'exit':
+        name = user_input
+        year = int(input("Enter year: "))
+        cost = float(input("Enter cost: "))
+        guitars.append(Guitar(name, year, cost))
+        user_input = input("Enter guitar name or 'exit' to finish: ")
+
     guitars.sort()
 
     print("\nGuitars sorted by year (oldest to newest):")
     for guitar in guitars:
         print(guitar)
+
+    write_guitars_to_file(filename, guitars)
 
 
 if __name__ == "__main__":
