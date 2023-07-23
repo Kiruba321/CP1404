@@ -1,13 +1,11 @@
 class Guitar:
 
     def __init__(self, name, year, cost):
-        """Construct a Guitar from the given values."""
         self.name = name
         self.year = year
         self.cost = cost
 
     def __str__(self):
-        """Return string representation of a Guitar."""
         return f"{self.name}, {self.year}, ${self.cost:.2f}"
 
     def __lt__(self, other):
