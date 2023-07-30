@@ -1,0 +1,30 @@
+BoxLayout:
+    orientation: 'vertical'
+    spacing: '10dp'
+    padding: '10dp'
+
+    TextInput:
+        id: input_miles
+        hint_text: "Enter miles"
+        multiline: False
+        font_size: '18sp'
+        on_text_validate: app.handle_convert(self.text)  # Call handle_convert() with TextInput text
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: '10dp'
+
+        Button:
+            text: "Up"
+            on_release: app.handle_increment(1)
+
+        Button:
+            text: "Down"
+            on_release: app.handle_increment(-1)
+
+        Label:
+            text: app.output_text
+            font_size: '24sp'
+            color: 1, 1, 0, 1
+            size_hint_y: None
+            height: '48dp'
