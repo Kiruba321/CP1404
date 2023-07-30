@@ -9,12 +9,17 @@ class BoxLayoutDemo(App):
         return self.root
 
     def handle_greet(self):
-        print('greet')
-        user_name = self.root.ids.user_name_input.text.strip()
+        print('test')
+        user_name = self.root.ids.input_name.text.strip()
         if user_name != "":
-            self.root.ids.greeting_label.text = f"Hello, {user_name}!"
+            greeting_text = f"Hello, {user_name}!"
+            self.root.ids.greeting_label.text = greeting_text
         else:
             self.root.ids.greeting_label.text = "Please enter your name."
+
+    def clear_fields(self):
+        self.root.ids.input_name.text = ''
+        self.root.ids.greeting_label.text = 'Enter your name'
 
 
 if __name__ == "__main__":
