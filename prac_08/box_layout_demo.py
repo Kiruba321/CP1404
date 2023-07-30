@@ -9,6 +9,7 @@ class BoxLayoutDemo(App):
         return self.root
 
     def handle_greet(self):
+        print('greet')
         user_name = self.root.ids.user_name_input.text.strip()
         if user_name != "":
             self.root.ids.greeting_label.text = f"Hello, {user_name}!"
