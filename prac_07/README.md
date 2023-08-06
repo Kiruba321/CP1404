@@ -26,3 +26,6 @@ Here are some handy links for you:
 
 Feel free to explore the code
 
+## Time taken
+
+Code took about half a day - needed online help - was hard 
