@@ -1,5 +1,7 @@
 import datetime
 
+from prac_07.project import Project
+
 
 def load_projects_from_file(filename):
     projects = []
@@ -86,20 +88,19 @@ def display_menu():
 
 
 def main():
-    """Main program to manage projects."""
     projects = []
-    is_running = True
+    load_filename = "projects.txt"
 
+    projects = load_projects_from_file(load_filename)
+    print("Projects loaded successfully.")
+
+    is_running = True
     while is_running:
         display_menu()
 
         choice = input(">>> ").upper()
 
-        if choice == "L":
-            filename = input("Enter the filename to load projects from: ")
-            projects = load_projects_from_file(filename)
-            print("Projects loaded successfully.")
-        elif choice == "S":
+        if choice == "S":
             filename = input("Enter the filename to save projects to: ")
             save_projects_to_file(filename, projects)
             print("Projects saved successfully.")
